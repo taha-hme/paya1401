@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
 string findSum(string str1, string str2)
 {
@@ -29,8 +30,11 @@ string findSum(string str1, string str2)
 }
 int main()
 {
-    string str1 = "12";
-    string str2 = "198111";
+	string str1, str2;
+	cout << "enter first number: ";
+    cin >> str1;
+    cout << "enter second number: ";
+    cin >> str2;
     cout << findSum(str1, str2);
     return 0;
 }
