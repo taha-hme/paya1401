@@ -9,7 +9,7 @@ int main()
     cout << "enter the number: ";
     cin >> n;
     str2 = to_string(n);
-    for (i = 2; i < 1000000; i++)
+    for (i = 2; i <= 1001; i++)
     {
         if (log10(i) == floor(log10(i)))
             continue;
