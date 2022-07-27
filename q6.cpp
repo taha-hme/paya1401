@@ -11,4 +11,5 @@ int main()
         if ((bitset<24>(i).to_string().find("00000", 24 - n) != string::npos) || (bitset<24>(i).to_string().find("11111", 24 - n) != string::npos))
             s += 1;
     cout << s;
+    return 0;
 }
