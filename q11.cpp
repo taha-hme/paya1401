@@ -2,10 +2,10 @@
 using namespace std;
 int main()
 {
-	int n, *a, i, j, k = 0;
+	int n, i, j, k = 0;
 	cout << "Enter the length of array: ";
 	cin >> n;
-	a = new int[n + 1];
+	int a[n + 1];
 	cout << "Enter numbers: ";
 	for (i = 1; i <= n; i++)
 		cin >> a[i];
