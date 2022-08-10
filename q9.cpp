@@ -19,8 +19,6 @@ int main()
             cout << n * i;
             break;
         }
-        else
-            continue;
     }
     return 0;
 }
