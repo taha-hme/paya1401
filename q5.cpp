@@ -32,13 +32,6 @@ int game(vector<int> boxes)
             else
                 return 1;
         }
-        if (boxes[0] == 2)
-        {
-            if (boxes[2] % 2 == 0 && boxes[1] + 1 == boxes[2])
-                return 2;
-            else
-                return 1;
-        }
     }
     for (i = 0; i < boxes.size(); i++)
     {
