@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+vector<vector<int>> checked;
 int game(vector<int> boxes)
 {
     int i, j;
@@ -33,6 +34,12 @@ int game(vector<int> boxes)
                 return 1;
         }
     }
+    vector<vector<int>>::iterator it = find(checked.begin(), checked.end(), boxes);
+    if (it != checked.end())
+        if (checked[it - checked.begin() + 1][0] == 1)
+            return 1;
+        else
+            return 2;
     for (i = 0; i < boxes.size(); i++)
     {
         if (i != 0)
@@ -42,10 +49,17 @@ int game(vector<int> boxes)
         {
             boxes[i] -= j;
             if (game(boxes) == 2)
+            {
+                boxes[i] += j;
+                checked.push_back(boxes);
+                checked.push_back({1});
                 return 1;
+            }
             boxes[i] += j;
         }
     }
+    checked.push_back(boxes);
+    checked.push_back({2});
     return 2;
 }
 int main()
