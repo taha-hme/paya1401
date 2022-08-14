@@ -40,6 +40,16 @@ int game(vector<int> boxes)
             return 1;
         else
             return 2;
+    vector<int> common;
+    for (i = 0; i < checked.size(); i += 2)
+    {
+        if (checked[i + 1][0] == 1 || checked[i].size() > boxes.size() || checked[i].size() + 1 < boxes.size())
+            continue;
+        set_intersection(checked[i].begin(), checked[i].end(), boxes.begin(), boxes.end(), back_inserter(common));
+        if (common.size() == checked[i].size() || common.size() + 1 == checked[i].size())
+            return 1;
+        common.clear();
+    }
     for (i = 0; i < boxes.size(); i++)
     {
         if (i != 0)
